@@ -1,0 +1,6 @@
+{
+  "name": "CineFlow 2.5 - AI Video Generator",
+  "description": "Production AI video generator inspired by Seedance 2.5. Generate cinematic 4K videos from text, images, and multi-reference inputs with native sound synthesis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

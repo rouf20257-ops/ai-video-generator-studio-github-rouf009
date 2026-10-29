@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #FAFAFC;
+  --color-surface: #FFFFFF;
+  --color-surface-2: #F1F1F6;
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-text: #12121A;
+  --color-muted: #62627A;
+  --color-accent-grad: linear-gradient(135deg, #7C3AED 0%, #2563EB 50%, #06B6D4 100%);
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+}
+
+.dark {
+  --color-bg: #09090F;
+  --color-surface: #12121A;
+  --color-surface-2: #1A1A25;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-text: #F5F5FA;
+  --color-muted: #9A9AAE;
+  --color-accent-grad: linear-gradient(135deg, #7C3AED 0%, #2563EB 50%, #06B6D4 100%);
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+}
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --color-app-bg: var(--color-bg);
+  --color-app-surface: var(--color-surface);
+  --color-app-surface2: var(--color-surface-2);
+  --color-app-border: var(--color-border);
+  --color-app-text: var(--color-text);
+  --color-app-muted: var(--color-muted);
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  /* Accessible focus ring */
+  *:focus-visible {
+    outline: 2px solid #7C3AED;
+    outline-offset: 2px;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7C3AED;
+}
+
+/* Utility Gradients & Glows */
+.gradient-accent {
+  background: linear-gradient(135deg, #7C3AED 0%, #2563EB 50%, #06B6D4 100%);
+}
+
+.gradient-accent-text {
+  background: linear-gradient(135deg, #A78BFA 0%, #60A5FA 50%, #22D3EE 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow-accent {
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.35);
+}
+
+.card-highlight {
+  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
+}
